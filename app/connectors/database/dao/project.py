@@ -9,6 +9,8 @@ class Project:
     id: str = None
     name: str = None
     email_id : str = None
+    created_utc : str = None
+    updated_utc : str = None
 
     def to_dict(self):
         return {key:val for key,val in asdict(self).items() if val}
@@ -41,4 +43,3 @@ class ProjectDAO(BaseDAO):
         sql = self.queryUtil._delete(self.table_name, filters={"id":project_id})
         print(sql)
 
-        
